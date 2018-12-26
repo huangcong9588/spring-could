@@ -1,0 +1,25 @@
+server:
+  port: 8761
+
+
+eureka:
+  instance:
+    hostname: eureka-server
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.ip-address}:${server.port}/eureka/
+      #defaultZone: http://eureka-server-1:8762/eureka/
+#security:
+#  user:
+#    name: admin
+#    password: admin
+#  basic:
+#     enabled: false
+#management:
+#  security:
+#    enabled: true
+#    roles: ADMIN

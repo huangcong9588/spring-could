@@ -1,0 +1,26 @@
+server:
+  port: 8767
+spring:
+  application:
+    name: service-feign
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  instance:
+    hostname: service-feign
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+#security:
+#  user:
+#    name: admin
+#    password: admin
+#  basic:
+#    enabled: true
+
+
+

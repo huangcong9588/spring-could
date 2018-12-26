@@ -1,0 +1,30 @@
+server:
+  port: 8768
+spring:
+  application:
+    name: service-turbine
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  instance:
+    hostname: service-turbine
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+turbine:
+  app-config: service-feign
+  cluster-name-expression: new String('default')
+  combine-host-port: true
+#security:
+#  user:
+#    name: admin
+#    password: admin
+#  basic:
+#    enabled: true
+
+
+
